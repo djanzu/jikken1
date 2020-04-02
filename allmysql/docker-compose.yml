@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  db:
+    container_name: allmysql
+    image: mysql:5.7
+    volumes:
+      - ./mysql/:/var/lib/mysql
+      - ./my/conf.d/:/etc/mysql/conf.d
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: work
+      MYSQL_USER: mue
+      MYSQL_PASSWORD: fxc-70h
+    ports:
+      - '3306:3306'
+

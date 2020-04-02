@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  web:
+    container_name: web-testcont
+    build: ./web
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - '25454:80'
+    environment:
+      DB_HOST: host.docker.internal
+      DB_PORT: 3306
+      DB_NAME: work
+      DB_USER: root
+      DB_PASS: password
+      IN_DOCKER: 1
